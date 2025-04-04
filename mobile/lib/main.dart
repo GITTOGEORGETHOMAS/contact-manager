@@ -14,7 +14,6 @@ void main() async {
     // need to load env vars before others
     await dotenv.load(fileName: ".env");
     print("ENV loaded successfully");
-    print("ENV loaded successfully");
   } catch (e) {
     print("Failed to load .env file: $e");
   }

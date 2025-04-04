@@ -1,12 +1,12 @@
 import { createContext, useContext } from 'react';
-import { useContacts } from '../hooks/useContactsData';
+import { useContactsData } from '../hooks/useContactsData';
 
 // Create context
 const ContactContext = createContext();
 
 // Create provider component
 export function ContactProvider({ children }) {
-  const contactMethods = useContacts();
+  const contactMethods = useContactsData();
 
   return (
     <ContactContext.Provider value={contactMethods}>

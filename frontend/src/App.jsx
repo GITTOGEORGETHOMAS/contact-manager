@@ -5,15 +5,14 @@ import AddContact from './pages/AddContact';
 import EditContact from './pages/EditContact';
 import NotFound from './pages/NotFound';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="d-flex flex-column min-vh-100">
         <Navbar />
-        <main>
+        <main className="flex-grow-1 py-3">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/add" element={<AddContact />} />
@@ -21,6 +20,11 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+        <footer className="py-3 bg-light mt-auto">
+          <div className="container text-center">
+            <span className="text-muted">Contact Manager &copy; {new Date().getFullYear()}</span>
+          </div>
+        </footer>
       </div>
     </Router>
   );
